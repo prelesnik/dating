@@ -11,8 +11,20 @@ h1 {
 
 p {
     text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
 }
 
 #button {
     text-align: center;
+}
+
+#subHeading {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+img {
+    width: 70%;
 }
