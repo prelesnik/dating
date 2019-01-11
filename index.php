@@ -1,4 +1,9 @@
 <?php
+//Mike Prelesnik
+//1/11/19
+//Dating Website
+//the fat-free setup for the dating website
+
 //turn on error reporting
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
