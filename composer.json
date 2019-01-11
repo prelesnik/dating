@@ -1,0 +1,12 @@
+{
+  "name": "mprelesn/328/dating",
+  "authors": [
+    {
+      "name": "Mike Prelesnik",
+      "email": "mprelesnik@mail.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
