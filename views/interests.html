@@ -3,8 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Interests</title>
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript and Bootstrap-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+    <h1>Interests</h1>
+    <form method="POST" action="#">
+        <label>In-door Interests</label><br>
+        <select name="">
+            <repeat group="" value="">
+                <option></option>
+            </repeat>
+        </select><br>
 
+        <label>Out-door Interests</label><br>
+        <select name="">
+            <repeat group="" value="">
+                <option></option>
+            </repeat>
+        </select><br>
+
+        <!--sample of iterating through array for dropdown (need to change to checkboxes)-->
+        <!--<select name="outdoor">-->
+            <!--<repeat group="{{@colors}}" value="{{@colorOption}}">-->
+                <!--<option>{{ @colorOption }}</option>-->
+            <!--</repeat>-->
+        <!--</select>-->
+
+        <input type="submit" value="Submit">
+
+
+    </form>
 </body>
 </html>
