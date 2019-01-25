@@ -23,5 +23,37 @@ $f3->route('GET /', function() {
     echo $view->render('views/home.html');
 });
 
+
+
+
+
+
+
+//define a personal info view
+$f3->route('GET|POST /personalInfo', function() {
+    $view = new View();
+    echo $view->render('views/personalInfo.html');
+});
+
+//define a profile view
+$f3->route('GET|POST /profile', function() {
+    $view = new View();
+    echo $view->render('views/profile.html');
+});
+
+//define an interests view
+$f3->route('GET|POST /interests', function() {
+    $view = new View();
+    echo $view->render('views/interests.html');
+});
+
+
+
+
+
+
+
+
+
 //run fat-free
 $f3->run();
