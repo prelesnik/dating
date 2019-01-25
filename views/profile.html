@@ -3,8 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript and Bootstrap-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+    <h1>Profile</h1>
+    <form method="POST" action="#" id="profile">
+        <div>
+            <label>
+                Email<br>
+                <input type="text" name="email">
+            </label><br>
 
+            <label>
+                State<br>
+                <input type="text" name="lname">
+            </label><br>
+
+            <label>
+                Seeking<br>
+                <input type="radio" name="gender" value="male">Male
+                <input type="radio" name="gender" value="female">Female
+            </label><br>
+        </div>
+
+        <div>
+            <label>
+                Biography<br>
+                <textarea rows="4" cols="50" name="comment" form="profile"></textarea>
+            </label><br>
+        </div>
+
+        <div id="button">
+            <button type="button" class="btn btn-primary">Next</button>
+        </div>
+
+
+    </form>
 </body>
 </html>
