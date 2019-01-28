@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Profile</title>
-    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="../styles/bootstrap.min.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -12,38 +13,70 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h1>Profile</h1>
-    <form method="POST" action="#" id="profile">
-        <div>
-            <label>
-                Email<br>
-                <input type="text" name="email">
-            </label><br>
+    <div class="container">
+        <nav class="navbar navbar-light bg-light">
+            <a href="home.html">My Dating Website</a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+        </nav>
+    </div>
+    <br>
 
-            <label>
-                State<br>
-                <input type="text" name="lname">
-            </label><br>
+    <div class="container border border-info img-rounded">
+        <h1>Profile</h1>
+        <form method="POST" action="#" id="profile">
 
-            <label>
-                Seeking<br>
-                <input type="radio" name="gender" value="male">Male
-                <input type="radio" name="gender" value="female">Female
-            </label><br>
+        <div class="container col-sm-6">
+            <div>
+                <label>
+                    Email<br>
+                    <input type="text" name="email">
+                </label><br>
+
+                <label>
+                    State<br>
+                    <input type="text" name="lname">
+                </label><br>
+
+                <label>
+                    Seeking<br>
+                    <input type="radio" name="gender" value="male">Male
+                    <input type="radio" name="gender" value="female">Female
+                </label><br>
+            </div>
+        </div>
+        <div class="container col-sm-6">
+            <div>
+                <label>
+                    Biography<br>
+                    <textarea rows="4" cols="50" name="comment" form="profile"></textarea>
+                </label><br>
+            </div>
+
+            <div id="button" class="float-right">
+                <button type="button" class="btn btn-primary">Next</button>
+            </div>
         </div>
 
-        <div>
-            <label>
-                Biography<br>
-                <textarea rows="4" cols="50" name="comment" form="profile"></textarea>
-            </label><br>
-        </div>
-
-        <div id="button">
-            <button type="button" class="btn btn-primary">Next</button>
-        </div>
 
 
-    </form>
+
+
+
+
+
+        </form>
+    </div>
+
 </body>
 </html>
