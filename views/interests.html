@@ -13,32 +13,51 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h1>Interests</h1>
-    <form method="POST" action="#">
-        <label>In-door Interests</label><br>
-        <select name="">
-            <repeat group="" value="">
-                <option></option>
-            </repeat>
-        </select><br>
+    <div class="container">
+        <nav class="navbar navbar-light bg-light">
+            <a href="home.html">My Dating Website</a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+        </nav>
+    </div>
+    <br>
 
-        <label>Out-door Interests</label><br>
-        <select name="">
-            <repeat group="" value="">
-                <option></option>
-            </repeat>
-        </select><br>
+    <div class="container border border-info img-rounded">
+        <div class="container col-sm-12">
+            <h1 class="PIheader">Interests</h1>
+            <hr>
+        </div>
 
-        <!--sample of iterating through array for dropdown (need to change to checkboxes)-->
-        <!--<select name="outdoor">-->
-            <!--<repeat group="{{@colors}}" value="{{@colorOption}}">-->
-                <!--<option>{{ @colorOption }}</option>-->
-            <!--</repeat>-->
-        <!--</select>-->
+        <form method="POST" action="#">
+            <label>In-door Interests</label><br>
+            <select name="">
+                <repeat group="" value="">
+                    <option></option>
+                </repeat>
+            </select><br>
 
-        <input type="submit" value="Submit">
+            <label>Out-door Interests</label><br>
+            <select name="">
+                <repeat group="" value="">
+                    <option></option>
+                </repeat>
+            </select><br>
 
+            <div id="button" class="float-right">
+                <button type="button" class="btn btn-primary">Submit</button>
+            </div>
 
-    </form>
+        </form>
+    </div>
 </body>
 </html>
