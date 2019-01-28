@@ -43,11 +43,25 @@ img {
     width: 130%;
 }
 
+.PItextbox {
+    width: 500px;
+}
+
 .disclaimer {
-    padding-top: 60px;
+    padding-top: 20px;
+    background-color: #e6e6e6;
 }
 
 .PIheader {
     text-align: left;
 }
 
+.PIbutton {
+    position: absolute;
+    right: 10px;
+}
+
+.outerContainer {
+    height: 400px;
+    overflow: auto;
+}
