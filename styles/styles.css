@@ -67,5 +67,22 @@ img {
 }
 
 table, th, td {
+    padding: 10px;
+    margin: 10px;
     border: 1px solid black;
+}
+
+#noProfilePic {
+    height: 50%;
+    width: 50%;
+}
+
+#biography {
+    padding-right: 100px;
+    margin-right: 100px;
+}
+
+#bioHead {
+    padding-left: 15px;
+    margin-left: 15px;
 }
