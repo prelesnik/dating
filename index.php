@@ -31,7 +31,20 @@ $f3->route('GET|POST /', function() {
 });
 
 //define a personal info view
-$f3->route('GET|POST /personalInfo', function() {
+$f3->route('GET|POST /personalInfo', function($f3) {
+    $_SESSION = array();
+    if(isset($_POST['fname']) AND isset($_POST['lname']) AND isset($_POST['age'])
+                    AND isset($_POST['gender']) AND isset($_POST['phone']))
+    {
+        $animal = $_POST['animal'];
+        if(validString($animal)){
+            $_SESSION['animal'] = $animal;
+            $f3 -> reroute('/order2');
+        }else{
+            $f3->set("errors['animal']", "Please enter an animal.");
+        }
+    }
+
     $template = new Template();
     echo $template->render('views/personalInfo.html');
 });
