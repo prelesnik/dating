@@ -38,6 +38,19 @@
             <hr>
         </div>
 
+        <check if="{{ isset(@errors['fname']) }}">
+            <p>{{ @errors ['fname']}}</p>
+        </check>
+        <check if="{{ isset(@errors['lname']) }}">
+            <p>{{ @errors ['fname']}}</p>
+        </check>
+        <check if="{{ isset(@errors['age']) }}">
+            <p>{{ @errors ['age']}}</p>
+        </check>
+        <check if="{{ isset(@errors['phone']) }}">
+            <p>{{ @errors ['phone']}}</p>
+        </check>
+
         <div class="container col-sm-9">
             <form method="POST" action="#">
                 <label>

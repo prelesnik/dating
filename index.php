@@ -59,6 +59,8 @@ $f3->route('GET|POST /personalInfo', function($f3) {
     //if the information is entered
     if(!empty($_POST))
     {
+        $isValid = true;
+
         //assign gender
         $_SESSION['gender'] = $_POST['gender'];
 
@@ -72,6 +74,7 @@ $f3->route('GET|POST /personalInfo', function($f3) {
         //if the info is not submitted correctly
         else
         {
+            $isValid = false;
             $f3->set("errors['fname']", "Name is not entered correctly. Please try again.");
         }
 
@@ -84,7 +87,8 @@ $f3->route('GET|POST /personalInfo', function($f3) {
         //if the info is not submitted correctly
         else
         {
-            $f3->set("errors['age']", "Name is not entered correctly. Please try again.");
+            $isValid = false;
+            $f3->set("errors['age']", "Age must be greater than 18. Please try again.");
         }
 
         //if phone is valid
@@ -96,11 +100,15 @@ $f3->route('GET|POST /personalInfo', function($f3) {
         //if the info is not submitted correctly
         else
         {
-            $f3->set("errors['phone']", "Name is not entered correctly. Please try again.");
+            $isValid = false;
+            $f3->set("errors['phone']", "Phone number is not entered correctly. Please try again.");
         }
 
-        //reroute
-        $f3 -> reroute('/profile');
+        if ($isValid)
+        {
+            //reroute
+            $f3 -> reroute('/profile');
+        }
     }
 
     $template = new Template();

@@ -2,7 +2,12 @@
     //check name
     function validName($fname, $lname)
     {
-        if(!(preg_match('/^[a-z]+$/i',$fname)) OR $fname == "") //if the name does not only contain letters
+//        if(!(preg_match('/^[a-z]+$/i',$fname)) OR $fname == "") //if the name does not only contain letters
+//        {
+//            return false;
+//        }
+
+        if(!ctype_alpha($fname) OR $fname == "") //if the name does not only contain letters
         {
             return false;
         }
