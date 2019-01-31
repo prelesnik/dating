@@ -37,6 +37,17 @@
         return true;
     }
 
+    //check phone number
+    function validEmail($email)
+    {
+        if(!(filter_var($email, FILTER_VALIDATE_EMAIL))) //if email is not valid
+        {
+            return false;
+        }
+
+        return true;
+    }
+
     //check interests
     function validIndoor()
     {

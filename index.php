@@ -35,6 +35,7 @@ $f3->route('GET|POST /', function() {
 //define a personal info view
 $f3->route('GET|POST /personalInfo', function($f3) {
 
+    //create an empty session array to hold values
     $_SESSION = array();
 
     //if the information is entered
@@ -90,6 +91,11 @@ $f3->route('GET|POST /personalInfo', function($f3) {
 
 //define a profile view
 $f3->route('GET|POST /profile', function() {
+
+
+
+
+
     $template = new Template();
     echo $template->render('views/profile.html');
 });

@@ -15,7 +15,7 @@
 <body>
     <div class="container">
         <nav class="navbar navbar-light bg-light">
-            <a href="home.html">My Dating Website</a>
+            <a href="/328/dating">My Dating Website</a>
             <a href=""></a>
             <a href=""></a>
             <a href=""></a>
@@ -36,28 +36,28 @@
         <div class="col-sm-6">
             <table>
                 <tr>
-                    <td>Name: Mike Prelesnik</td>
+                    <td>Name: {{@fname}} {{@lname}}</td>
                 </tr>
                 <tr>
-                    <td>Gender: Male</td>
+                    <td>Gender: {{@gender}}</td>
                 </tr>
                 <tr>
-                    <td>Age: 27</td>
+                    <td>Age: {{@age}}</td>
                 </tr>
                 <tr>
-                    <td>Phone: 4257614900</td>
+                    <td>Phone: {{@phone}}</td>
                 </tr>
                 <tr>
-                    <td>Email: mprelesnik@mail.greenriver.edu</td>
+                    <td>Email: {{@email}}</td>
                 </tr>
                 <tr>
-                    <td>State: Washington</td>
+                    <td>State: {{@state}}</td>
                 </tr>
                 <tr>
-                    <td>Seeking: Female</td>
+                    <td>Seeking: {{@seeking}}</td>
                 </tr>
                 <tr>
-                    <td>Interests: Baseball, football, snowboarding, guitar, singing</td>
+                    <td>Interests: </td>
                 </tr>
             </table>
         </div>
@@ -65,9 +65,7 @@
         <div class="col-sm-6">
             <img id="noProfilePic" src="images/noProfilePic.jpg" alt="a default profile pic">
             <h3 id="bioHead">Biography</h3>
-            <p id="biography">fdsafds fsdafdsf dsfadsfdsfdsfsadf jutkuyt
-                regdf wdawefreg safdsafdsa hytkyutkiut
-            </p>
+            <p id="biography">{{@bio}}</p>
         </div>
 
         <div class="col-sm-12">
