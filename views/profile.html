@@ -49,13 +49,17 @@
 
                     <label>
                         State<br>
-                        <input type="text" name="lname">
+                        <select name="state">
+                            <repeat group="{{@states}}" value="{{@state}}">
+                                <option value="{{@state}}">{{@state}}</option>
+                            </repeat>
+                        </select>
                     </label><br>
 
                     <label>
                         Seeking<br>
-                        <input type="radio" name="gender" value="male">Male
-                        <input type="radio" name="gender" value="female">Female
+                        <input type="radio" name="seeking" value="male">Male
+                        <input type="radio" name="seeking" value="female">Female
                     </label><br>
                 </div>
             </div>
@@ -63,26 +67,12 @@
                 <div>
                     <label>
                         Biography<br>
-                        <textarea rows="4" cols="50" name="comment" form="profile"></textarea>
+                        <textarea rows="4" cols="50" name="bio" form="profile"></textarea>
                     </label><br>
                 </div>
-
-                <!--<form action="profile" method="POST">-->
-                    <!--<div id="button" class="float-right">-->
-                        <input class="btn btn-primary float-right" type="submit" value="Next">
-                    <!--</div>-->
-                <!--</form>-->
+                <input class="btn btn-primary float-right" type="submit" value="Next">
             </div>
-
-
-
-
-
-
-
-
         </form>
     </div>
-
 </body>
 </html>

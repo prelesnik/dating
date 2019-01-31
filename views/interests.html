@@ -40,36 +40,20 @@
 
         <form method="POST" action="summary">
             <label>In-door Interests</label><br>
-                <repeat group="{{@indoor}}" value="{{@item}}">
-                    <div class="col-sm-3">
-                        <input type="checkbox" value="{{@item}}">{{@item}}
-                    </div>
+            <repeat group="{{@indoor}}" value="{{@item}}">
+                <div class="col-sm-3">
+                    <input type="checkbox" value="{{@item}}">{{@item}}
+                </div>
 
-                </repeat><br>
+            </repeat><br>
             <label>Out-door Interests</label><br>
-                <repeat group="{{@outdoor}}" value="{{@item}}">
-                    <div class="col-sm-3">
-                        <input type="checkbox" value="{{@item}}">{{@item}}
-                    </div>
-                </repeat><br><br><br>
+            <repeat group="{{@outdoor}}" value="{{@item}}">
+                <div class="col-sm-3">
+                    <input type="checkbox" value="{{@item}}">{{@item}}
+                </div>
+            </repeat><br><br><br>
 
-            <!--sample of iterating through array for dropdown (need to change to checkboxes)-->
-            <!--<select name="outdoor">-->
-            <!--<repeat group="{{@colors}}" value="{{@colorOption}}">-->
-            <!--<option>{{ @colorOption }}</option>-->
-            <!--</repeat>-->
-            <!--</select>-->
-
-            <!--<div id="button" class="float-right">-->
-                <!--<button type="button" class="btn btn-primary">Submit</button>-->
-            <!--</div>-->
-
-            <!--<form action="interests" method="POST">-->
-                <!--<div id="button" class="float-right">-->
-                    <input class="btn btn-primary float-right" type="submit" value="Submit">
-                <!--</div>-->
-            <!--</form>-->
-
+            <input class="btn btn-primary float-right" type="submit" value="Submit">
         </form>
     </div>
 </body>

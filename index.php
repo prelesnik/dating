@@ -4,6 +4,8 @@
 //Dating Website
 //the fat-free setup for the dating website
 
+session_start();
+
 //turn on error reporting
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
@@ -23,6 +25,22 @@ $f3->set('indoor', array('tv', 'movies', 'cooking', 'board games',
             'puzzles', 'reading', 'playing cards', 'video games'));
 $f3->set('outdoor', array('hiking', 'biking', 'swimming', 'collecting',
                         'walking'), 'climbing');
+
+$f3->set('states', array('AL'=>'Alabama','AK'=>'Alaska','AZ'=>'Arizona','AR'=>'Arkansas',
+                        'CA'=>'California','CO'=>'Colorado','CT'=>'Connecticut','DE'=>'Delaware',
+                        'DC'=>'District of Columbia','FL'=>'Florida','GA'=>'Georgia',
+                        'HI'=>'Hawaii','ID'=>'Idaho','IL'=>'Illinois','IN'=>'Indiana',
+                        'IA'=>'Iowa','KS'=>'Kansas','KY'=>'Kentucky','LA'=>'Louisiana',
+                        'ME'=>'Maine','MD'=>'Maryland','MA'=>'Massachusetts','MI'=>'Michigan',
+                        'MN'=>'Minnesota','MS'=>'Mississippi','MO'=>'Missouri',
+                        'MT'=>'Montana','NE'=>'Nebraska','NV'=>'Nevada',
+                        'NH'=>'New Hampshire','NJ'=>'New Jersey','NM'=>'New Mexico',
+                        'NY'=>'New York','NC'=>'North Carolina','ND'=>'North Dakota',
+                        'OH'=>'Ohio','OK'=>'Oklahoma','OR'=>'Oregon',
+                        'PA'=>'Pennsylvania','RI'=>'Rhode Island','SC'=>'South Carolina',
+                        'SD'=>'South Dakota','TN'=>'Tennessee','TX'=>'Texas',
+                        'UT'=>'Utah','VT'=>'Vermont','VA'=>'Virginia','WA'=>'Washington',
+                        'WV'=>'West Virginia','WI'=>'Wisconsin','WY'=>'Wyoming'));
 
 
 
@@ -90,11 +108,29 @@ $f3->route('GET|POST /personalInfo', function($f3) {
 });
 
 //define a profile view
-$f3->route('GET|POST /profile', function() {
+$f3->route('GET|POST /profile', function($f3) {
+    if(!empty($_POST))
+    {
+        //assign un-validated values
+        $_SESSION['seeking'] = $_POST['seeking'];
+        $_SESSION['bio'] = $_POST['bio'];
+        $_SESSION['state'] = $_POST['state'];
 
+        //if email is valid
+        if(validEmail($_POST['email']))
+        {
+            $_SESSION['email'] = $_POST['email'];
+        }
 
+        //if the info is not submitted correctly
+        else
+        {
+            $f3->set("errors['email']", "Email is not entered correctly. Please try again.");
+        }
 
-
+        //reroute
+        $f3 -> reroute('/interests');
+    }
 
     $template = new Template();
     echo $template->render('views/profile.html');
@@ -111,12 +147,6 @@ $f3->route('GET|POST /summary', function() {
     $template = new Template();
     echo $template->render('views/summary.html');
 });
-
-
-
-
-
-
 
 
 

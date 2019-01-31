@@ -36,25 +36,25 @@
         <div class="col-sm-6">
             <table>
                 <tr>
-                    <td>Name: {{@fname}} {{@lname}}</td>
+                    <td>Name: {{@SESSION.fname}} {{@SESSION.lname}}</td>
                 </tr>
                 <tr>
-                    <td>Gender: {{@gender}}</td>
+                    <td>Gender: {{@SESSION.gender}}</td>
                 </tr>
                 <tr>
-                    <td>Age: {{@age}}</td>
+                    <td>Age: {{@SESSION.age}}</td>
                 </tr>
                 <tr>
-                    <td>Phone: {{@phone}}</td>
+                    <td>Phone: {{@SESSION.phone}}</td>
                 </tr>
                 <tr>
-                    <td>Email: {{@email}}</td>
+                    <td>Email: {{@SESSION.email}}</td>
                 </tr>
                 <tr>
-                    <td>State: {{@state}}</td>
+                    <td>State: {{@SESSION.state}}</td>
                 </tr>
                 <tr>
-                    <td>Seeking: {{@seeking}}</td>
+                    <td>Seeking: {{@SESSION.seeking}}</td>
                 </tr>
                 <tr>
                     <td>Interests: </td>
@@ -65,7 +65,7 @@
         <div class="col-sm-6">
             <img id="noProfilePic" src="images/noProfilePic.jpg" alt="a default profile pic">
             <h3 id="bioHead">Biography</h3>
-            <p id="biography">{{@bio}}</p>
+            <p id="biography">{{@SESSION.bio}}</p>
         </div>
 
         <div class="col-sm-12">
