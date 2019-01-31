@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Interests</title>
-    <link rel="stylesheet" type="text/css" href="../styles/styles.css">
-    <link rel="stylesheet" type="text/css" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -40,18 +40,14 @@
 
         <form method="POST" action="summary">
             <label>In-door Interests</label><br>
-            <select name="">
-                <repeat group="" value="">
-                    <option></option>
-                </repeat>
-            </select><br>
+                <repeat group="{{@indoor}}" value="{{@item}}">
+                    <input type="checkbox" value="{{@item}}">{{@item}}
+                </repeat><br>
 
             <label>Out-door Interests</label><br>
-            <select name="">
-                <repeat group="" value="">
-                    <option></option>
-                </repeat>
-            </select><br>
+                <repeat group="{{@outdoor}}" value="{{@item}}">
+                    <input type="checkbox" value="{{@item}}">{{@item}}
+                </repeat><br>
 
             <!--sample of iterating through array for dropdown (need to change to checkboxes)-->
             <!--<select name="outdoor">-->
@@ -64,11 +60,11 @@
                 <!--<button type="button" class="btn btn-primary">Submit</button>-->
             <!--</div>-->
 
-            <form action="interests" method="POST">
-                <div id="button" class="float-right">
+            <!--<form action="interests" method="POST">-->
+                <!--<div id="button" class="float-right">-->
                     <input class="btn btn-primary" type="submit" value="Submit">
-                </div>
-            </form>
+                <!--</div>-->
+            <!--</form>-->
 
         </form>
     </div>

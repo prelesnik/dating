@@ -2,12 +2,12 @@
     //check name
     function validName($fname, $lname)
     {
-        if(1 === preg_match('~[0-9]+~', $fname))
+        if(!(preg_match('/^[a-z]+$/i',$fname)) OR $fname == "") //if the name does not only contain letters
         {
             return false;
         }
 
-        else if(1 === preg_match('~[0-9]+~', $lname))
+        else if(!(preg_match('/^[a-z]+$/i',$lname)) OR $lname == "") //if the name does not only contain letters
         {
             return false;
         }
@@ -18,7 +18,7 @@
     //check age
     function validAge($age)
     {
-        if(1 !== preg_match('~[0-9]+~', $age) OR !($age > 18))
+        if(preg_match('/^[a-z]+$/i',$age) OR !($age > 18) OR $age == "") //if the age contains letters or is under 18
         {
             return false;
         }
@@ -27,9 +27,14 @@
     }
 
     //check phone number
-    function validPhone()
+    function validPhone($phone)
     {
+        if(preg_match('/^[a-z]+$/i',$phone) OR $phone == "") //if the phone contains letters
+        {
+            return false;
+        }
 
+        return true;
     }
 
     //check interests
