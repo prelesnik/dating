@@ -86,3 +86,7 @@ table, th, td {
     padding-left: 15px;
     margin-left: 15px;
 }
+
+#hpDiv {
+    text-align: center;
+}
