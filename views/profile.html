@@ -38,6 +38,10 @@
             <hr>
         </div>
 
+        <check if="{{ isset(@errors['email']) }}">
+            <p>{{ @errors ['email']}}</p>
+        </check>
+
         <form method="POST" action="#" id="profile">
 
             <div class="container col-sm-6">

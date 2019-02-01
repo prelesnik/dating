@@ -152,26 +152,35 @@ $f3->route('GET|POST /profile', function($f3) {
 
 //define an interests view
 $f3->route('GET|POST /interests', function($f3) {
-    if(!empty($_POST))
+    if(isset($_POST['submitButton']))
     {
         $isValid = true;
 
         //if checkboxes are valid
-        if (validIndoor($_POST['indoor']) AND validOutdoor($_POST['outdoor']))
-        {
-            $interests = array_merge($_POST['indoor'], $_POST['outdoor']);
-            $_SESSION['interests'] = implode(" ", $interests);
-        }
-
-        //if interests are not valid
-        else
+        if (isset($_POST['indoor']) AND !validIndoor())
         {
             $isValid = false;
             $f3->set("errors['indoor']", "Interests are not valid. Please try again.");
         }
 
+        if (isset($_POST['outdoor']) AND !validOutdoor())
+        {
+            $isValid = false;
+            $f3->set("errors['outdoor']", "Interests are not valid. Please try again.");
+        }
+
         if ($isValid)
         {
+            if (isset($_POST['indoor']))
+            {
+                $_SESSION['indoor'] = implode(" ", $_POST['indoor']);
+            }
+
+            if (isset($_POST['outdoor']))
+            {
+                $_SESSION['outdoor'] = implode(" ", $_POST['outdoor']);
+            }
+
             //reroute
             $f3 -> reroute('/summary');
         }

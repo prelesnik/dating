@@ -54,13 +54,47 @@
     }
 
     //check interests
-    function validIndoor($indoor)
+    function validIndoor()
     {
+        $validIndoorInterests = array('tv', 'movies', 'cooking', 'board games',
+                    'puzzles', 'reading', 'playing cards', 'video games');
+
+        //if no interests are checked, still allow (since it is optional)
+        if (!isset($_POST['indoor']))
+        {
+            return true;
+        }
+
+        //check that the client did not spoof the data
+        foreach ($_POST['indoor'] as $interest)
+        {
+            if (!(in_array($interest, $validIndoorInterests)))
+            {
+                return false;
+            }
+        }
         return true;
     }
 
-    function validOutdoor($outdoor)
+    function validOutdoor()
     {
+        $validOutdoorInterests = array('hiking', 'biking', 'swimming', 'collecting',
+                                        'walking', 'climbing');
+
+        //if no interests are checked, still allow (since it is optional)
+        if (!isset($_POST['outdoor']))
+        {
+            return true;
+        }
+
+        //check that the client did not spoof the data
+        foreach ($_POST['outdoor'] as $interest)
+        {
+            if (!(in_array($interest, $validOutdoorInterests)))
+            {
+                return false;
+            }
+        }
         return true;
     }
 
