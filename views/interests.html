@@ -38,18 +38,36 @@
             <hr>
         </div>
 
+        <check if="{{ isset(@errors['indoor']) }}">
+            <p>{{ @errors ['indoor']}}</p>
+        </check>
+
         <form method="POST" action="#">
             <label>In-door Interests</label><br>
             <repeat group="{{@indoor}}" value="{{@item}}">
                 <div class="col-sm-3">
-                    <input type="checkbox" value="{{@item}}" name="indoor[]">{{@item}}
+                    <check if="{{in_array(@item, @POST.indoor)}}">
+                        <true>
+                            <input type="checkbox" value="{{@item}}" name="indoor[]" checked="checked">{{@item}}
+                        </true>
+                        <false>
+                            <input type="checkbox" value="{{@item}}" name="indoor[]">{{@item}}
+                        </false>
+                    </check>
                 </div>
-
             </repeat><br>
+
             <label>Out-door Interests</label><br>
             <repeat group="{{@outdoor}}" value="{{@item}}">
                 <div class="col-sm-3">
-                    <input type="checkbox" value="{{@item}}" name="outdoor[]">{{@item}}
+                    <check if="{{in_array(@item, @POST.outdoor)}}">
+                        <true>
+                            <input type="checkbox" value="{{@item}}" name="outdoor[]" checked="checked">{{@item}}
+                        </true>
+                        <false>
+                            <input type="checkbox" value="{{@item}}" name="outdoor[]">{{@item}}
+                        </false>
+                    </check>
                 </div>
             </repeat><br><br><br>
 

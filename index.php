@@ -166,7 +166,7 @@ $f3->route('GET|POST /interests', function($f3) {
         if (isset($_POST['outdoor']) AND !validOutdoor())
         {
             $isValid = false;
-            $f3->set("errors['outdoor']", "Interests are not valid. Please try again.");
+            $f3->set("errors['indoor']", "Interests are not valid. Please try again.");
         }
 
         if ($isValid)
