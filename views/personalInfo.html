@@ -55,28 +55,44 @@
             <form method="POST" action="#">
                 <label>
                     First Name<br>
-                    <input class="PItextbox" type="text" name="fname">
+                    <input class="PItextbox" type="text" name="fname" value="{{@POST.fname}}">
                 </label><br>
 
                 <label>
                     Last Name<br>
-                    <input class="PItextbox" type="text" name="lname">
+                    <input class="PItextbox" type="text" name="lname" value="{{@POST.lname}}">
                 </label><br>
 
                 <label>
                     Age<br>
-                    <input class="PItextbox" type="number" name="age">
+                    <input class="PItextbox" type="number" name="age" value="{{@POST.age}}">
                 </label><br>
 
                 <label>
                     Gender<br>
-                    <input type="radio" name="gender" value="male">Male
-                    <input type="radio" name="gender" value="female">Female
+                    <check if="{{@POST.gender == male}}">
+                        <true>
+                            <input type="radio" name="gender" value="male" checked="checked">Male
+                        </true>
+                        <false>
+                            <input type="radio" name="gender" value="male">Male
+                        </false>
+                    </check>
+
+                    <check if="{{@POST.gender == female}}">
+                        <true>
+                            <input type="radio" name="gender" value="female" checked="checked">Female
+                        </true>
+                        <false>
+                            <input type="radio" name="gender" value="female">Female
+                        </false>
+                    </check>
+
                 </label><br>
 
                 <label>
                     Phone Number<br>
-                    <input class="PItextbox" type="number" name="phone">
+                    <input class="PItextbox" type="number" name="phone" value="{{@POST.phone}}">
                 </label><br>
 
                 <input class="PIbutton btn btn-primary" type="submit" value="Next">
