@@ -159,9 +159,6 @@ $f3->route('GET|POST /interests', function($f3) {
         //if checkboxes are valid
         if (validIndoor($_POST['indoor']) AND validOutdoor($_POST['outdoor']))
         {
-//            $_SESSION['indoor'] = $_POST['indoor'];
-//            $_SESSION['outdoor'] = $_POST['outdoor'];
-
             $interests = array_merge($_POST['indoor'], $_POST['outdoor']);
             $_SESSION['interests'] = implode(" ", $interests);
         }
