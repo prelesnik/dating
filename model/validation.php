@@ -34,7 +34,7 @@
     //check phone number
     function validPhone($phone)
     {
-        if(preg_match('/^[a-z]+$/i',$phone) OR $phone == "") //if the phone contains letters
+        if(preg_match('/^[a-z]+$/i',$phone) OR $phone == "" OR strlen((string)$phone) != 10) //if the phone contains letters
         {
             return false;
         }
@@ -54,14 +54,14 @@
     }
 
     //check interests
-    function validIndoor()
+    function validIndoor($indoor)
     {
-
+        return true;
     }
 
-    function validOutdoor()
+    function validOutdoor($outdoor)
     {
-
+        return true;
     }
 
 

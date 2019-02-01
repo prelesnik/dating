@@ -119,6 +119,8 @@ $f3->route('GET|POST /personalInfo', function($f3) {
 $f3->route('GET|POST /profile', function($f3) {
     if(!empty($_POST))
     {
+        $isValid = true;
+
         //assign un-validated values
         $_SESSION['seeking'] = $_POST['seeking'];
         $_SESSION['bio'] = $_POST['bio'];
@@ -133,11 +135,15 @@ $f3->route('GET|POST /profile', function($f3) {
         //if the info is not submitted correctly
         else
         {
+            $isValid = false;
             $f3->set("errors['email']", "Email is not entered correctly. Please try again.");
         }
 
-        //reroute
-        $f3 -> reroute('/interests');
+        if ($isValid)
+        {
+            //reroute
+            $f3 -> reroute('/interests');
+        }
     }
 
     $template = new Template();
@@ -145,7 +151,36 @@ $f3->route('GET|POST /profile', function($f3) {
 });
 
 //define an interests view
-$f3->route('GET|POST /interests', function() {
+$f3->route('GET|POST /interests', function($f3) {
+    if(!empty($_POST))
+    {
+        $isValid = true;
+
+        //if checkboxes are valid
+        if (validIndoor($_POST['indoor']) AND validOutdoor($_POST['outdoor']))
+        {
+//            $_SESSION['indoor'] = $_POST['indoor'];
+//            $_SESSION['outdoor'] = $_POST['outdoor'];
+
+            $interests = array_merge($_POST['indoor'], $_POST['outdoor']);
+            $_SESSION['interests'] = implode(" ", $interests);
+        }
+
+        //if interests are not valid
+        else
+        {
+            $isValid = false;
+            $f3->set("errors['indoor']", "Interests are not valid. Please try again.");
+        }
+
+        if ($isValid)
+        {
+            //reroute
+            $f3 -> reroute('/summary');
+        }
+    }
+
+
     $template = new Template();
     echo $template->render('views/interests.html');
 });

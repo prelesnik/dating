@@ -38,19 +38,18 @@
             <hr>
         </div>
 
-        <!-- when you get interests working replace action with # -->
-        <form method="POST" action="summary">
+        <form method="POST" action="#">
             <label>In-door Interests</label><br>
             <repeat group="{{@indoor}}" value="{{@item}}">
                 <div class="col-sm-3">
-                    <input type="checkbox" value="{{@item}}">{{@item}}
+                    <input type="checkbox" value="{{@item}}" name="indoor[]">{{@item}}
                 </div>
 
             </repeat><br>
             <label>Out-door Interests</label><br>
             <repeat group="{{@outdoor}}" value="{{@item}}">
                 <div class="col-sm-3">
-                    <input type="checkbox" value="{{@item}}">{{@item}}
+                    <input type="checkbox" value="{{@item}}" name="outdoor[]">{{@item}}
                 </div>
             </repeat><br><br><br>
 
