@@ -43,7 +43,6 @@ $f3->set('states', array('AL'=>'Alabama','AK'=>'Alaska','AZ'=>'Arizona','AR'=>'A
                         'WV'=>'West Virginia','WI'=>'Wisconsin','WY'=>'Wyoming'));
 
 
-
 //define a default route
 $f3->route('GET|POST /', function() {
     $template = new Template;
@@ -106,6 +105,17 @@ $f3->route('GET|POST /personalInfo', function($f3) {
 
         if ($isValid)
         {
+            if (isset($_POST['premium']))
+            {
+                $_SESSION['premium'] = 1;
+                print_r($_SESSION['premium']);
+            }
+
+            else
+            {
+                //do not assign the session
+            }
+
             //reroute
             $f3 -> reroute('/profile');
         }
@@ -141,8 +151,20 @@ $f3->route('GET|POST /profile', function($f3) {
 
         if ($isValid)
         {
-            //reroute
-            $f3 -> reroute('/interests');
+            if ($_SESSION['premium'] == 1)
+            {
+                //reroute
+                $f3 -> reroute('/interests');
+            }
+
+            else
+            {
+                //reroute
+                $f3 -> reroute('/summary');
+            }
+
+//            //reroute
+//            $f3 -> reroute('/interests');
         }
     }
 
