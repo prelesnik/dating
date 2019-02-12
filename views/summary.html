@@ -56,9 +56,14 @@
                 <tr>
                     <td>Seeking: {{@SESSION.seeking}}</td>
                 </tr>
-                <tr>
-                    <td>Interests: {{@SESSION.indoor}} {{@SESSION.outdoor}}</td>
-                </tr>
+
+                <check if="$_SESSION['premium'] == 1">
+                    <true>
+                        <tr>
+                            <td>Interests: {{@SESSION.indoor}} {{@SESSION.outdoor}}</td>
+                        </tr>
+                    </true>
+                </check>
             </table>
         </div>
 
