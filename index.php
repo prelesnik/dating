@@ -4,13 +4,13 @@
 //Dating Website
 //the fat-free setup for the dating website
 
-session_start();
-
 //turn on error reporting
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 require_once "vendor/autoload.php";
+session_start();
+
 //require validation
 require_once('model/validation.php');
 
