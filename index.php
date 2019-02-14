@@ -222,7 +222,7 @@ $f3->route('GET|POST /interests', function($f3) {
             if (isset($_POST['outdoor']))
             {
                 $_SESSION['outdoor'] = implode(" ", $_POST['outdoor']);
-                $_SESSION['newPremiumMember']->setOutDoorInterests($_SESSION['indoor']);
+                $_SESSION['newPremiumMember']->setOutDoorInterests($_SESSION['outdoor']);
             }
 
             //reroute

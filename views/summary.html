@@ -35,35 +35,88 @@
     <div class="container border border-info img-rounded">
         <div class="col-sm-6">
             <table>
-                <tr>
-                    <td>Name: {{@SESSION.fname}} {{@SESSION.lname}}</td>
-                </tr>
-                <tr>
-                    <td>Gender: {{@SESSION.gender}}</td>
-                </tr>
-                <tr>
-                    <td>Age: {{@SESSION.age}}</td>
-                </tr>
-                <tr>
-                    <td>Phone: {{@SESSION.phone}}</td>
-                </tr>
-                <tr>
-                    <td>Email: {{@SESSION.email}}</td>
-                </tr>
-                <tr>
-                    <td>State: {{@SESSION.state}}</td>
-                </tr>
-                <tr>
-                    <td>Seeking: {{@SESSION.seeking}}</td>
-                </tr>
-
                 <check if="$_SESSION['premium'] == 1">
                     <true>
                         <tr>
-                            <td>Interests: {{@SESSION.indoor}} {{@SESSION.outdoor}}</td>
+                            <td>Name: {{@SESSION.newPremiumMember->getFname()}} {{@SESSION.newPremiumMember->getLname()}}</td>
+                        </tr>
+                        <tr>
+                            <td>Gender: {{@SESSION.newPremiumMember->getGender()}}</td>
+                        </tr>
+                        <tr>
+                            <td>Age: {{@SESSION.newPremiumMember->getAge()}}</td>
+                        </tr>
+                        <tr>
+                            <td>Phone: {{@SESSION.newPremiumMember->getPhone()}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email: {{@SESSION.newPremiumMember->getEmail()}}</td>
+                        </tr>
+                        <tr>
+                            <td>State: {{@SESSION.newPremiumMember->getState()}}</td>
+                        </tr>
+                        <tr>
+                            <td>Seeking: {{@SESSION.newPremiumMember->getSeeking()}}</td>
+                        </tr>
+                        <tr>
+                            <td>Interests: {{@SESSION.newPremiumMember->getInDoorInterests()}} {{@SESSION.newPremiumMember->getOutDoorInterests()}}</td>
                         </tr>
                     </true>
+                    <false>
+                        <tr>
+                            <td>Name: {{@SESSION.newMember->getFname()}} {{@SESSION.newMember->getLname()}}</td>
+                        </tr>
+                        <tr>
+                            <td>Gender: {{@SESSION.newMember->getGender()}}</td>
+                        </tr>
+                        <tr>
+                            <td>Age: {{@SESSION.newMember->getAge()}}</td>
+                        </tr>
+                        <tr>
+                            <td>Phone: {{@SESSION.newMember->getPhone()}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email: {{@SESSION.newMember->getEmail()}}</td>
+                        </tr>
+                        <tr>
+                            <td>State: {{@SESSION.newMember->getState()}}</td>
+                        </tr>
+                        <tr>
+                            <td>Seeking: {{@SESSION.newMember->getSeeking()}}</td>
+                        </tr>
+                    </false>
                 </check>
+
+
+                <!--<tr>-->
+                    <!--<td>Name: {{@SESSION.fname}} {{@SESSION.lname}}</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>Gender: {{@SESSION.gender}}</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>Age: {{@SESSION.age}}</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>Phone: {{@SESSION.phone}}</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>Email: {{@SESSION.email}}</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>State: {{@SESSION.state}}</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>Seeking: {{@SESSION.seeking}}</td>-->
+                <!--</tr>-->
+
+                <!--<check if="$_SESSION['premium'] == 1">-->
+                    <!--<true>-->
+                        <!--<tr>-->
+                            <!--<td>Interests: {{@SESSION.indoor}} {{@SESSION.outdoor}}</td>-->
+                        <!--</tr>-->
+                    <!--</true>-->
+                <!--</check>-->
             </table>
         </div>
 
