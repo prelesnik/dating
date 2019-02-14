@@ -109,11 +109,20 @@ $f3->route('GET|POST /personalInfo', function($f3) {
             {
                 $_SESSION['premium'] = 1;
                 print_r($_SESSION['premium']);
+
+                $newPremiumMember = new PremiumMember($_SESSION['fname'], $_SESSION['lname'],
+                            $_SESSION['age'], $_SESSION['gender'], $_SESSION['phone']);
+
+                $_SESSION['newPremiumMember'] = $newPremiumMember;
             }
 
             else
             {
                 //do not assign the session
+                $newMember = new Member($_SESSION['fname'], $_SESSION['lname'],
+                    $_SESSION['age'], $_SESSION['gender'], $_SESSION['phone']);
+
+                $_SESSION['newMember'] = $newMember;
             }
 
             //reroute
