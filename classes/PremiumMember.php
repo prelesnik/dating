@@ -7,6 +7,7 @@ class PremiumMember extends Member
 
     //getters and setters
     /**
+     * Gets the indoor interests
      * @return Array $inDoorInterests the indoor interests
      */
     public function getInDoorInterests()
@@ -15,6 +16,7 @@ class PremiumMember extends Member
     }
 
     /**
+     * Sets the indoor interests
      * @param Array $inDoorInterests the indoor interests
      */
     public function setInDoorInterests($inDoorInterests)
@@ -23,6 +25,7 @@ class PremiumMember extends Member
     }
 
     /**
+     * Gets the outdoor interests
      * @return Array $outDoorInterests the outdoor interests
      */
     public function getOutDoorInterests()
@@ -31,6 +34,7 @@ class PremiumMember extends Member
     }
 
     /**
+     * Sets the outdoor interests
      * @param Array $outDoorInterests the outdoor interests
      */
     public function setOutDoorInterests($outDoorInterests)

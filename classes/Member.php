@@ -10,6 +10,7 @@ class Member
     private $_email;
     private $_state;
     private $_seeking;
+    private $_bio;
 
     //constructor
     public function __construct($fname, $lname, $age, $gender, $phone)
@@ -25,6 +26,7 @@ class Member
     //getters and setters
 
     /**
+     * Gets the first name
      * @return String fname the first name
      */
     public function getFname()
@@ -33,6 +35,7 @@ class Member
     }
 
     /**
+     * Sets the first name
      * @param String $fname the first name
      */
     public function setFname($fname)
@@ -41,6 +44,7 @@ class Member
     }
 
     /**
+     * Gets the last name
      * @return String lname the last name
      */
     public function getLname()
@@ -49,6 +53,7 @@ class Member
     }
 
     /**
+     * Sets the last name
      * @param String $lname the last name
      */
     public function setLname($lname)
@@ -57,6 +62,7 @@ class Member
     }
 
     /**
+     * Gets the age
      * @return int age the age
      */
     public function getAge()
@@ -65,6 +71,7 @@ class Member
     }
 
     /**
+     * Sets the age
      * @param int $age the age
      */
     public function setAge($age)
@@ -73,6 +80,7 @@ class Member
     }
 
     /**
+     * Gets the gender
      * @return String gender the gender
      */
     public function getGender()
@@ -81,6 +89,7 @@ class Member
     }
 
     /**
+     * Sets the gender
      * @param String $gender the gender
      */
     public function setGender($gender)
@@ -89,6 +98,7 @@ class Member
     }
 
     /**
+     * Gets the phone number
      * @return String $phone the phone number
      */
     public function getPhone()
@@ -97,6 +107,7 @@ class Member
     }
 
     /**
+     * Sets the phone number
      * @param String $phone the phone number
      */
     public function setPhone($phone)
@@ -105,6 +116,7 @@ class Member
     }
 
     /**
+     * Gets the email
      * @return String $email the email
      */
     public function getEmail()
@@ -113,6 +125,7 @@ class Member
     }
 
     /**
+     * Sets the email
      * @param String $email the email
      */
     public function setEmail($email)
@@ -121,6 +134,7 @@ class Member
     }
 
     /**
+     * Gets the state
      * @return String $state the state
      */
     public function getState()
@@ -129,6 +143,7 @@ class Member
     }
 
     /**
+     * Sets the state
      * @param String $state the state
      */
     public function setState($state)
@@ -137,6 +152,7 @@ class Member
     }
 
     /**
+     * Gets the gender seeking
      * @return String $seeking the gender the user seeks
      */
     public function getSeeking()
@@ -145,6 +161,7 @@ class Member
     }
 
     /**
+     * Sets the gender seeking
      * @param String $seeking the gender the user seeks
      */
     public function setSeeking($seeking)
@@ -153,6 +170,7 @@ class Member
     }
 
     /**
+     * Gets the bio
      * @return String $bio the biography
      */
     public function getBio()
@@ -161,11 +179,11 @@ class Member
     }
 
     /**
+     * Sets the bio
      * @param String $bio the biography
      */
     public function setBio($bio)
     {
         $this->_bio = $bio;
     }
-    private $_bio;
 }

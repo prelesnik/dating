@@ -108,7 +108,6 @@ $f3->route('GET|POST /personalInfo', function($f3) {
             if (isset($_POST['premium']))
             {
                 $_SESSION['premium'] = 1;
-                print_r($_SESSION['premium']);
 
                 $newPremiumMember = new PremiumMember($_SESSION['fname'], $_SESSION['lname'],
                             $_SESSION['age'], $_SESSION['gender'], $_SESSION['phone']);
@@ -118,7 +117,7 @@ $f3->route('GET|POST /personalInfo', function($f3) {
 
             else
             {
-                //do not assign the session
+                //do not assign the session for premium membership
                 $newMember = new Member($_SESSION['fname'], $_SESSION['lname'],
                     $_SESSION['age'], $_SESSION['gender'], $_SESSION['phone']);
 
@@ -162,18 +161,30 @@ $f3->route('GET|POST /profile', function($f3) {
         {
             if ($_SESSION['premium'] == 1)
             {
+
+
+                //set new data to the object
+                $_SESSION['newPremiumMember']->setEmail($_SESSION['email']);
+                $_SESSION['newPremiumMember']->setState($_SESSION['state']);
+                $_SESSION['newPremiumMember']->setSeeking($_SESSION['seeking']);
+                $_SESSION['newPremiumMember']->setBio($_SESSION['bio']);
+
                 //reroute
                 $f3 -> reroute('/interests');
             }
 
             else
             {
+                //set new data to the object
+                $_SESSION['newMember']->setEmail($_SESSION['email']);
+                $_SESSION['newMember']->setState($_SESSION['state']);
+                $_SESSION['newMember']->setSeeking($_SESSION['seeking']);
+                $_SESSION['newMember']->setBio($_SESSION['bio']);
+
                 //reroute
                 $f3 -> reroute('/summary');
             }
 
-//            //reroute
-//            $f3 -> reroute('/interests');
         }
     }
 
@@ -205,11 +216,13 @@ $f3->route('GET|POST /interests', function($f3) {
             if (isset($_POST['indoor']))
             {
                 $_SESSION['indoor'] = implode(" ", $_POST['indoor']);
+                $_SESSION['newPremiumMember']->setInDoorInterests($_SESSION['indoor']);
             }
 
             if (isset($_POST['outdoor']))
             {
                 $_SESSION['outdoor'] = implode(" ", $_POST['outdoor']);
+                $_SESSION['newPremiumMember']->setOutDoorInterests($_SESSION['indoor']);
             }
 
             //reroute
