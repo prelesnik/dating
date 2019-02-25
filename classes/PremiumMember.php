@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Class PremiumMember creates a PremiumMember Object for the dating website
+ * @author Mike Prelesnik
+ * @version 1.0
+ */
 class PremiumMember extends Member
 {
     private $_inDoorInterests;

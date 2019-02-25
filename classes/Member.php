@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Class Member creates a Member Object for the dating website
+ * @author Mike Prelesnik
+ * @version 1.0
+ */
 class Member
 {
     private $_fname;
