@@ -241,6 +241,12 @@ $f3->route('GET|POST /summary', function() {
     echo $template->render('views/summary.html');
 });
 
+//define an admin view
+$f3->route('GET|POST /admin', function() {
+    $template = new Template();
+    echo $template->render('views/admin.php');
+});
+
 
 
 //run fat-free
