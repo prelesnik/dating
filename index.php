@@ -5,10 +5,11 @@
 //the fat-free setup for the dating website
 
 //turn on error reporting
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+//error_reporting(E_ALL);
 
 require_once "vendor/autoload.php";
+
 session_start();
 
 //require validation
@@ -237,6 +238,14 @@ $f3->route('GET|POST /interests', function($f3) {
 
 //define a summary view
 $f3->route('GET|POST /summary', function() {
+
+    //connect to db
+    $db = new Database();
+    $db->connect();
+
+    //insert new member
+    $db->insertMember();
+
     $template = new Template();
     echo $template->render('views/summary.html');
 });
