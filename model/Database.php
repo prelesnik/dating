@@ -61,10 +61,10 @@ class Database
         $state = $_SESSION['state'];
         $seeking = $_SESSION['seeking'];
         $bio = $_SESSION['bio'];
-        $image = "images/noProfilePic.jpg";
 
         if ($_SESSION['premium'] == 1)
         {
+            $image = "images/noProfilePic.jpg";
             $premium = 1;
             $indoor = $_SESSION['indoor'];
             $outdoor = $_SESSION['outdoor'];
@@ -72,6 +72,7 @@ class Database
         }
         else
         {
+            $image = null;
             $premium = 0;
             $interests = null;
         }
