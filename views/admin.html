@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfect Match - Admin Page</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript and Bootstrap-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-light bg-light">
+            <a href="/328/dating">My Dating Website</a>
+            <a href="/328/dating/admin">Admin</a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+        </nav>
+    </div>
+    <br>
+    <h1>Perfect Match Members</h1>
+    <table id="memberTable">
+        <thead>
+            <th class="MTHeads">Member ID</th>
+            <th class="MTHeads">First Name</th>
+            <th class="MTHeads">Last Name</th>
+            <th class="MTHeads">Age</th>
+            <th class="MTHeads">Gender</th>
+            <th class="MTHeads">Phone</th>
+            <th class="MTHeads">Email</th>
+            <th class="MTHeads">State</th>
+            <th class="MTHeads">Seeking</th>
+            <th class="MTHeads">Biography</th>
+            <th class="MTHeads">Premium Membership</th>
+            <th class="MTHeads">Image</th>
+            <th class="MTHeads">Interests</th>
+        </thead>
+        <!-- fill with values from db -->
+        <tbody>
+            <repeat group="{{@result}}" value="{{@member}}">
+                <tr>
+                    <td class="MTBody">{{@member['member_id']}}</td>
+                    <td class="MTBody">{{@member['fname']}}</td>
+                    <td class="MTBody">{{@member['lname']}}</td>
+                    <td class="MTBody">{{@member['age']}}</td>
+                    <td class="MTBody">{{@member['gender']}}</td>
+                    <td class="MTBody">{{@member['phone']}}</td>
+                    <td class="MTBody">{{@member['email']}}</td>
+                    <td class="MTBody">{{@member['state']}}</td>
+                    <td class="MTBody">{{@member['seeking']}}</td>
+                    <td class="MTBody">{{@member['bio']}}</td>
+                    <td class="MTBody">{{@member['premium']}}</td>
+                    <td class="MTBody">{{@member['image']}}</td>
+                    <td class="MTBody">{{@member['interests']}}</td>
+                </tr>
+            </repeat>
+
+
+        </tbody>
+    </table>
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script>
+        $("#memberTable").DataTable();
+    </script>
+</body>
+</html>

@@ -31,9 +31,9 @@ class Database
         try {
             //instantiate a db Object
             $GLOBALS['dbh'] = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
-            echo "Connected to db!";
+            //echo "Connected to db!";
         } catch (PDOException $e) {
-            echo "not connected";
+            //echo "not connected";
             echo $e->getMessage();
         }
     }
@@ -61,8 +61,8 @@ class Database
         $state = $_SESSION['state'];
         $seeking = $_SESSION['seeking'];
         $bio = $_SESSION['bio'];
-        $image = null;
-        //need to change interests to insert properly
+        $image = "images/noProfilePic.jpg";
+
         if ($_SESSION['premium'] == 1)
         {
             $premium = 1;
@@ -129,7 +129,7 @@ class Database
         global $dbh;
 
         //1. define the query
-        $sql = "SELECT * FROM members;";
+        $sql = "SELECT * FROM members ORDER BY lname;";
 
         //2. prepare the statement
         $statement = $dbh->prepare($sql);

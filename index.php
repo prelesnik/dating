@@ -251,9 +251,15 @@ $f3->route('GET|POST /summary', function() {
 });
 
 //define an admin view
-$f3->route('GET|POST /admin', function() {
+$f3->route('GET|POST /admin', function($f3) {
+    //connect to db
+    $db = new Database();
+    $db->connect();
+    $result = $db->getMembers();
+    $f3->set('result', $result);
+
     $template = new Template();
-    echo $template->render('views/admin.php');
+    echo $template->render('views/admin.html');
 });
 
 
