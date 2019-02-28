@@ -63,7 +63,8 @@
                     <td class="MTBody">{{@member['state']}}</td>
                     <td class="MTBody">{{@member['seeking']}}</td>
                     <td class="MTBody">{{@member['bio']}}</td>
-                    <td class="MTBody">{{@member['premium']}}</td>
+                    <td class="MTBody"><input type="checkbox"
+                        <check if="@member['premium'] == 1">checked=checked</check>></td>
                     <td class="MTBody">{{@member['image']}}</td>
                     <td class="MTBody">{{@member['interests']}}</td>
                 </tr>
