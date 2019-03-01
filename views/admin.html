@@ -35,6 +35,7 @@
     <h1>Perfect Match Members</h1>
     <table id="memberTable">
         <thead>
+            <th class="MTHeads">View Member</th>
             <th class="MTHeads">Member ID</th>
             <th class="MTHeads">First Name</th>
             <th class="MTHeads">Last Name</th>
@@ -53,6 +54,7 @@
         <tbody>
             <repeat group="{{@result}}" value="{{@member}}">
                 <tr>
+                    <td><a href="/328/dating/viewMember/{{@member['member_id']}}">View</a></td>
                     <td class="MTBody">{{@member['member_id']}}</td>
                     <td class="MTBody">{{@member['fname']}}</td>
                     <td class="MTBody">{{@member['lname']}}</td>
@@ -63,7 +65,7 @@
                     <td class="MTBody">{{@member['state']}}</td>
                     <td class="MTBody">{{@member['seeking']}}</td>
                     <td class="MTBody">{{@member['bio']}}</td>
-                    <td class="MTBody"><input type="checkbox"
+                    <td class="MTBody"><input type="checkbox" disabled
                         <check if="@member['premium'] == 1">checked=checked</check>></td>
                     <td class="MTBody">{{@member['image']}}</td>
                     <td class="MTBody">{{@member['interests']}}</td>

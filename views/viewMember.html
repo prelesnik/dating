@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Member</title>
+</head>
+<body>
+    <p>First name: {{@$result['fname']}}</p>
+    <p>Last name: {{@$result['lname']}}</p>
+    <p>Age: {{@$result['age']}}</p>
+    <p>Gender: {{@$result['gender']}}</p>
+    <p>Phone: {{@$result['phone']}}</p>
+    <p>Email: {{@$result['email']}}</p>
+    <p>State: {{@$result['state']}}</p>
+    <p>Seeking: {{@$result['seeking']}}</p>
+    <p>Biography: {{@$result['bio']}}</p>
+    <check if="$result['premium'] == 1">
+        <true>
+            <p>Premium Membership: Yes</p>
+            <p>Image: images/noProfilePic.jpg</p>
+        </true>
+        <false>
+            <p></p>
+        </false>
+    </check>
+    <check if="$result['premium'] == 1">
+        <true>
+            <p>Interests: {{@$result['interests']}}</p>
+        </true>
+        <false>
+            <p></p>
+        </false>
+    </check>
+</body>
+</html>

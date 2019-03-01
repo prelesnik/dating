@@ -262,6 +262,18 @@ $f3->route('GET|POST /admin', function($f3) {
     echo $template->render('views/admin.html');
 });
 
+//define a view for viewing members
+$f3->route('GET|POST /viewMember/@memberId', function($f3, $params) {
+    //connect to db
+    $db = new Database();
+    $db->connect();
+    $result = $db->getMember($params['memberId']);
+    $f3->set('result', $result);
+
+    $template = new Template();
+    echo $template->render('views/viewMember.html');
+});
+
 
 
 //run fat-free

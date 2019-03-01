@@ -20,9 +20,14 @@ interests VARCHAR(500))
 //error_reporting(E_ALL);
 //ini_set('display_errors', '1');
 
-//***add class to composer.json, unsure of how to add multiple folders to autoload***
+/**
+ * Class Database connects to the database and inserts and views members
+ */
 class Database
 {
+    /**
+     * This method connects to the database
+     */
     function connect()
     {
         require_once '/home/mprelesn/config.php';
@@ -38,6 +43,10 @@ class Database
         }
     }
 
+    /**
+     * This method inserts a member
+     * @return bool returns true if the insertion was successful and false if not
+     */
     function insertMember()
     {
         global $dbh;
@@ -97,12 +106,17 @@ class Database
         return $success;
     }
 
-    function getMember($id)
+    /**
+     * This method views a specific member in the table
+     * @param $member_id the id of the member
+     * @return the row of the associated member
+     */
+    function getMember($member_id)
     {
         global $dbh;
 
         //1. define the query
-        $sql = "SELECT * FROM student where member_id = :member_id";
+        $sql = "SELECT * FROM members where member_id = :member_id";
 
         //2. prepare the statement
         $statement = $dbh->prepare($sql);
@@ -116,15 +130,13 @@ class Database
         //5. return the result
         $result = $statement->fetch(PDO::FETCH_ASSOC);
 
-        $student = new Student($member_id, $result['fname'], $result['lname'],
-                                $result['age'], $result['gender'], $result['phone'],
-                                $result['email'], $result['state'], $result['seeking'],
-                                $result['bio'], $result['premium'], $result['image'],
-                                $result['interests']);
-
-        return $student;
+        return $result;
     }
 
+    /**
+     * This method returns all of the members in the table
+     * @return array of members
+     */
     function getMembers()
     {
         global $dbh;
